@@ -3,8 +3,11 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFrameworks>net472;net6.0-windows</TargetFrameworks>
-    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TheBaseCSharpLib\TheBaseCSharpLib.csproj" />
+  </ItemGroup>
 
 </Project>
