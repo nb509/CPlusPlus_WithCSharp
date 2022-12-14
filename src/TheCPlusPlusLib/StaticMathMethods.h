@@ -6,5 +6,5 @@
 #define DLLEXPORT
 #endif
 
-// does the C here mean that it exports the method as C? (since C# can interop with C but not c++???)
 extern "C" DLLEXPORT void Sum(int number1, int number2, int& result);
+extern "C" DLLEXPORT void Multiply(int number1, int number2, int& result);
