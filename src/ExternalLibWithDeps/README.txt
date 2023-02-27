@@ -18,7 +18,11 @@ Next step is to add aravis to the library. There are a few stages:
 		C:\msys64\mingw64\include\aravis-0.8
 		C:\msys64\mingw64\include\glib-2.0
 		C:\msys64\mingw64\lib\glib-2.0\include
-	4. I took the pre-built dlls from msys bin (C:\msys64\mingw64\bin) and added them to the [lib] directory for each.
+		NOTE: I only had to modify a single header file (arvapi.h) where I replaced:
+			This: #define ARV_API extern __attribute__ ((visibility ("default")))
+			With This: #define ARV_API _declspec(dllimport)
+			Although I'm not 100% sure why that was required
+	4. I then took the pre-built dlls from msys bin (C:\msys64\mingw64\bin) and added them to the [lib] directory for each.
 		Note: I wasn't sure what dlls I needed and thought I had all of them. At that point I was getting a dll not found exception, but really that was just that the dll was missing dependencies but without a useful error.
 			  I built a console app that used aravis on its own, and only then did I get detailled error information about exactly which dlls were missing.
 			  There is probably a better way to learn this information.
